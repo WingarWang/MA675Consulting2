@@ -1,0 +1,681 @@
+Region,Outflow_Location,monkey,left,height
+Control,Uveal,1,1,47.89
+Control,Corneaoscleral,1,1,48.3333333
+Control,TM,1,1,31.7353333
+Control,SC,1,1,41.01
+Control,CC,1,1,54.2676667
+Control,ISV,1,1,54.929
+Control,ESV,1,1,57.644
+Control,Uveal,1,1,46.2446667
+Control,Corneaoscleral,1,1,59.2736667
+Control,TM,1,1,63.74
+Control,SC,1,1,52.8976667
+Control,CC,1,1,59.2543333
+Control,ISV,1,1,68.008
+Control,ESV,1,1,53.3936667
+Control,Uveal,1,1,46.547
+Control,Corneaoscleral,1,1,40.6913333
+Control,TM,1,1,47.695
+Control,SC,1,1,45.956
+Control,CC,1,1,203.595
+Control,ISV,1,1,44.4353333
+Control,ESV,1,1,63.0463333
+Control,Uveal,1,1,51.9433333
+Control,TM,1,1,44.9116667
+Control,SC,1,1,48.403
+Control,CC,1,1,188.429
+Control,ISV,1,1,58.6593333
+Control,ESV,1,1,50.6546667
+Control,Uveal,1,1,58.988
+Control,TM,1,1,39.7243333
+Control,SC,1,1,68.9816667
+Control,CC,1,1,173.800667
+Control,ISV,1,1,51.7873333
+Control,ESV,1,1,71.0443333
+Control,Uveal,1,1,87.613
+Control,Corneaoscleral,1,1,53.0223333
+Control,TM,1,1,70.247
+Control,SC,1,1,129.821
+Control,CC,1,1,46.8643333
+Control,ISV,1,1,61.6806667
+Control,ESV,1,1,152.011
+Control,Uveal,1,1,58.4853333
+Control,Corneaoscleral,1,1,63.5866667
+Control,TM,1,1,79.908
+Control,SC,1,1,95.4106667
+Control,CC,1,1,46.2486667
+Control,ISV,1,1,49.3526667
+Control,ESV,1,1,121.046333
+Control,Corneaoscleral,1,1,47.2603333
+Control,TM,1,1,98.4073333
+Control,SC,1,1,48.699
+Control,CC,1,1,55.6403333
+Control,ISV,1,1,59.5593333
+Control,ESV,1,1,78.6593333
+Control,Corneaoscleral,1,1,74.009
+Control,TM,1,1,96.722
+Control,SC,1,1,66.8986667
+Control,CC,1,1,52.2036667
+Control,ISV,1,1,61.9123333
+Control,ESV,1,1,185.148667
+Control,Corneaoscleral,1,1,59.9526667
+Control,TM,1,1,66.069
+Control,SC,1,1,41.543
+Control,CC,1,1,54.2516667
+Control,ISV,1,1,63.8326667
+Control,ESV,1,1,150.089
+Control,Uveal,2,0,66.3656667
+Control,Corneaoscleral,2,0,133.533667
+Control,TM,2,0,66.3656667
+Control,SC,2,0,184.533
+Control,CC,2,0,140.093667
+Control,ISV,2,0,309.193333
+Control,ESV,2,0,114.901
+Control,Uveal,2,0,42.3183333
+Control,Corneaoscleral,2,0,118.549667
+Control,TM,2,0,42.3183333
+Control,SC,2,0,139.557
+Control,CC,2,0,144.901
+Control,ISV,2,0,492.277667
+Control,ESV,2,0,178.650333
+Control,Uveal,2,0,101.165667
+Control,Corneaoscleral,2,0,155.366
+Control,TM,2,0,55.0433333
+Control,SC,2,0,192.875667
+Control,CC,2,0,131.415333
+Control,ISV,2,0,435.055667
+Control,ESV,2,0,110.722333
+Control,Uveal,2,0,55.0433333
+Control,TM,2,0,133.533667
+Control,SC,2,0,180.659667
+Control,CC,2,0,141.426
+Control,ISV,2,0,180.933667
+Control,ESV,2,0,232.732
+Control,Uveal,2,0,87.2683333
+Control,TM,2,0,118.549667
+Control,SC,2,0,148.738333
+Control,CC,2,0,172.099
+Control,ISV,2,0,203.340333
+Control,ESV,2,0,187.816667
+Control,Uveal,2,0,77.929
+Control,Corneaoscleral,2,0,96.618
+Control,TM,2,0,99.438
+Control,SC,2,0,101.681333
+Control,CC,2,0,157.474667
+Control,ISV,2,0,140.685667
+Control,ESV,2,0,166.829667
+Control,Uveal,2,0,80.3116667
+Control,Corneaoscleral,2,0,96.9086667
+Control,TM,2,0,82.17
+Control,SC,2,0,117.429667
+Control,CC,2,0,177.362
+Control,ISV,2,0,103.234
+Control,ESV,2,0,111.372333
+Control,Uveal,2,0,74.588
+Control,Corneaoscleral,2,0,81.3036667
+Control,TM,2,0,97.6333333
+Control,SC,2,0,83.811
+Control,CC,2,0,139.551667
+Control,ISV,2,0,158.157667
+Control,ESV,2,0,137.464
+Control,Uveal,2,0,89.492
+Control,TM,2,0,80.574
+Control,SC,2,0,115.407333
+Control,CC,2,0,117.588
+Control,ISV,2,0,156.977
+Control,ESV,2,0,110.695667
+Control,TM,2,0,88.3296667
+Control,SC,2,0,88.7986667
+Control,CC,2,0,233.314333
+Control,ISV,2,0,150.781
+Control,ESV,2,0,96.485
+Control,Uveal,3,0,57.7593333
+Control,Corneaoscleral,3,0,54.757
+Control,TM,3,0,67.6596667
+Control,SC,3,0,163.335667
+Control,CC,3,0,215.977
+Control,Uveal,3,0,65.983
+Control,Corneaoscleral,3,0,65.1966667
+Control,TM,3,0,52.9523333
+Control,SC,3,0,129.799
+Control,CC,3,0,143.161
+Control,Uveal,3,0,66.5586667
+Control,Corneaoscleral,3,0,72.5613333
+Control,TM,3,0,55.5043333
+Control,SC,3,0,122.558
+Control,CC,3,0,228.328
+Control,Uveal,3,0,57.3933333
+Control,Corneaoscleral,3,0,86.558
+Control,TM,3,0,82.0816667
+Control,SC,3,0,113.080333
+Control,CC,3,0,199.967
+Control,Uveal,3,0,56.0716667
+Control,Corneaoscleral,3,0,76.5593333
+Control,TM,3,0,66.633
+Control,SC,3,0,118.775
+Control,CC,3,0,192.214333
+Control,Uveal,3,0,92.0896667
+Control,Corneaoscleral,3,0,77.2613333
+Control,TM,3,0,82.08
+Control,SC,3,0,123.283
+Control,CC,3,0,144.229667
+Control,ISV,3,0,159.528333
+Control,ESV,3,0,154.359667
+Control,Uveal,3,0,90.9463333
+Control,Corneaoscleral,3,0,96.7626667
+Control,TM,3,0,106.168333
+Control,SC,3,0,165.106333
+Control,CC,3,0,166.459333
+Control,ISV,3,0,202.218
+Control,ESV,3,0,156.148
+Control,Uveal,3,0,171.606333
+Control,TM,3,0,108.227333
+Control,SC,3,0,144.154333
+Control,CC,3,0,133.139333
+Control,ISV,3,0,144.212333
+Control,ESV,3,0,135.680667
+Control,Uveal,3,0,93.5383333
+Control,TM,3,0,127.534
+Control,SC,3,0,164.841
+Control,CC,3,0,181.791
+Control,ISV,3,0,168.527333
+Control,ESV,3,0,146.998667
+Control,Uveal,3,0,80.4323333
+Control,TM,3,0,96.3913333
+Control,SC,3,0,209.499
+Control,CC,3,0,147.829
+Control,ISV,3,0,158.776333
+Control,ESV,3,0,151.147
+Control High Flow,Uveal,4,0,101.454667
+Control High Flow,Corneaoscleral,4,0,80.2776667
+Control High Flow,TM,4,0,95.454
+Control High Flow,SC,4,0,135
+Control High Flow,CC,4,0,109.168
+Control High Flow,ISV,4,0,104.848333
+Control High Flow,ESV,4,0,258.875667
+Control High Flow,Uveal,4,0,97.5763333
+Control High Flow,Corneaoscleral,4,0,81.311
+Control High Flow,TM,4,0,87.6193333
+Control High Flow,SC,4,0,110.883667
+Control High Flow,CC,4,0,129.315333
+Control High Flow,ISV,4,0,126.001
+Control High Flow,ESV,4,0,246.094
+Control High Flow,Uveal,4,0,122.361
+Control High Flow,Corneaoscleral,4,0,101.511333
+Control High Flow,TM,4,0,98.3693333
+Control High Flow,SC,4,0,91.365
+Control High Flow,CC,4,0,107.676
+Control High Flow,ISV,4,0,125.863333
+Control High Flow,ESV,4,0,219.852
+Control High Flow,Uveal,4,0,67.441
+Control High Flow,Corneaoscleral,4,0,105.297333
+Control High Flow,TM,4,0,115.979333
+Control High Flow,SC,4,0,112.416
+Control High Flow,CC,4,0,134.766
+Control High Flow,ISV,4,0,107.244
+Control High Flow,ESV,4,0,163.381
+Control High Flow,Corneaoscleral,4,0,100.967667
+Control High Flow,TM,4,0,90.7183333
+Control High Flow,SC,4,0,65.2563333
+Control High Flow,CC,4,0,118.370333
+Control High Flow,ISV,4,0,113.368667
+Control High Flow,ESV,4,0,186.159333
+Control High Flow,Uveal,4,0,88.989
+Control High Flow,Corneaoscleral,4,0,125.727
+Control High Flow,TM,4,0,111.332667
+Control High Flow,SC,4,0,85.5736667
+Control High Flow,CC,4,0,180.839667
+Control High Flow,ISV,4,0,178.453333
+Control High Flow,ESV,4,0,159.325667
+Control High Flow,Uveal,4,0,67.449
+Control High Flow,Corneaoscleral,4,0,88.852
+Control High Flow,TM,4,0,112.266333
+Control High Flow,SC,4,0,138.724333
+Control High Flow,CC,4,0,209.834667
+Control High Flow,ISV,4,0,231.617667
+Control High Flow,ESV,4,0,157.505333
+Control High Flow,Uveal,4,0,74.611
+Control High Flow,Corneaoscleral,4,0,99.5383333
+Control High Flow,TM,4,0,99.2776667
+Control High Flow,SC,4,0,158.848333
+Control High Flow,CC,4,0,169.665
+Control High Flow,ISV,4,0,201.620333
+Control High Flow,ESV,4,0,141.037333
+Control High Flow,Uveal,4,0,96.4033333
+Control High Flow,Corneaoscleral,4,0,114.080667
+Control High Flow,TM,4,0,87.8383333
+Control High Flow,SC,4,0,105.375333
+Control High Flow,CC,4,0,202.660333
+Control High Flow,ISV,4,0,235.691333
+Control High Flow,ESV,4,0,147.205333
+Control High Flow,Uveal,4,0,84.957
+Control High Flow,Corneaoscleral,4,0,77.3706667
+Control High Flow,TM,4,0,79.5933333
+Control High Flow,SC,4,0,108.478
+Control High Flow,CC,4,0,187.521
+Control High Flow,ISV,4,0,219.929
+Control High Flow,ESV,4,0,163.539667
+Control High Flow,Uveal,4,0,63.2123333
+Control High Flow,Corneaoscleral,4,0,85.079
+Control High Flow,TM,4,0,97.6603333
+Control High Flow,SC,4,0,135.839333
+Control High Flow,CC,4,0,166.224
+Control High Flow,ISV,4,0,76.7073333
+Control High Flow,Uveal,4,0,85.96
+Control High Flow,Corneaoscleral,4,0,89.2793333
+Control High Flow,TM,4,0,86.4153333
+Control High Flow,SC,4,0,148.919333
+Control High Flow,CC,4,0,128.862333
+Control High Flow,ISV,4,0,76.6223333
+Control High Flow,Uveal,4,0,90.6063333
+Control High Flow,Corneaoscleral,4,0,69.679
+Control High Flow,TM,4,0,98.5386667
+Control High Flow,SC,4,0,96.1446667
+Control High Flow,CC,4,0,139.865667
+Control High Flow,ISV,4,0,83.272
+Control High Flow,Corneaoscleral,4,0,76.2963333
+Control High Flow,TM,4,0,80.5656667
+Control High Flow,SC,4,0,109.907
+Control High Flow,CC,4,0,154.29
+Control High Flow,ISV,4,0,88.176
+Control High Flow,Corneaoscleral,4,0,76.6453333
+Control High Flow,TM,4,0,82.7133333
+Control High Flow,SC,4,0,122.005333
+Control High Flow,CC,4,0,150.662667
+Control High Flow,ISV,4,0,81.9703333
+Control High Flow,Uveal,5,0,89.6526667
+Control High Flow,Corneaoscleral,5,0,55.8686667
+Control High Flow,TM,5,0,55.8686667
+Control High Flow,SC,5,0,114.328
+Control High Flow,CC,5,0,186.918
+Control High Flow,ESV,5,0,200.219333
+Control High Flow,Uveal,5,0,80.3333333
+Control High Flow,Corneaoscleral,5,0,55.8303333
+Control High Flow,TM,5,0,65.8766667
+Control High Flow,SC,5,0,125.221
+Control High Flow,CC,5,0,165.938333
+Control High Flow,ESV,5,0,253.612
+Control High Flow,Uveal,5,0,65.2253333
+Control High Flow,Corneaoscleral,5,0,65.8766667
+Control High Flow,TM,5,0,89.6526667
+Control High Flow,SC,5,0,125.583333
+Control High Flow,CC,5,0,168.627667
+Control High Flow,ESV,5,0,230.134667
+Control High Flow,TM,5,0,80.3333333
+Control High Flow,SC,5,0,109.845333
+Control High Flow,CC,5,0,207.28
+Control High Flow,ESV,5,0,193.647667
+Control High Flow,TM,5,0,65.2253333
+Control High Flow,SC,5,0,73.7366667
+Control High Flow,CC,5,0,168.966333
+Control High Flow,ESV,5,0,194.604667
+Control High Flow,Uveal,8,0,74.2963333
+Control High Flow,Corneaoscleral,8,0,120.145
+Control High Flow,TM,8,0,74.2963333
+Control High Flow,SC,8,0,128.194667
+Control High Flow,CC,8,0,102.603
+Control High Flow,ISV,8,0,179.832333
+Control High Flow,ESV,8,0,150.325667
+Control High Flow,Uveal,8,0,89.9123333
+Control High Flow,Corneaoscleral,8,0,171.551333
+Control High Flow,TM,8,0,72.668
+Control High Flow,SC,8,0,151.057333
+Control High Flow,CC,8,0,124.197667
+Control High Flow,ISV,8,0,161.572333
+Control High Flow,ESV,8,0,77.971
+Control High Flow,Uveal,8,0,72.668
+Control High Flow,Corneaoscleral,8,0,136.860333
+Control High Flow,TM,8,0,82.9016667
+Control High Flow,SC,8,0,133.773667
+Control High Flow,CC,8,0,113.094333
+Control High Flow,ISV,8,0,108.334333
+Control High Flow,ESV,8,0,134.778
+Control High Flow,Uveal,8,0,65.5686667
+Control High Flow,Corneaoscleral,8,0,109.011667
+Control High Flow,TM,8,0,171.551333
+Control High Flow,SC,8,0,101.288667
+Control High Flow,CC,8,0,162.1
+Control High Flow,ISV,8,0,140.81
+Control High Flow,ESV,8,0,115.115667
+Control High Flow,Uveal,8,0,82.9016667
+Control High Flow,Corneaoscleral,8,0,104.360333
+Control High Flow,TM,8,0,109.011667
+Control High Flow,SC,8,0,88.5203333
+Control High Flow,CC,8,0,139.259667
+Control High Flow,ISV,8,0,151.593
+Control High Flow,ESV,8,0,140.019667
+Control High Flow,Uveal,8,0,39.0893333
+Control High Flow,Corneaoscleral,8,0,48.8963333
+Control High Flow,TM,8,0,39.0893333
+Control High Flow,SC,8,0,99.927
+Control High Flow,CC,8,0,85.3033333
+Control High Flow,ISV,8,0,98.7113333
+Control High Flow,Uveal,8,0,55.2706667
+Control High Flow,Corneaoscleral,8,0,51.394
+Control High Flow,TM,8,0,55.2706667
+Control High Flow,SC,8,0,102.683333
+Control High Flow,CC,8,0,58.9693333
+Control High Flow,ISV,8,0,78.8423333
+Control High Flow,Uveal,8,0,54.872
+Control High Flow,Corneaoscleral,8,0,53.7353333
+Control High Flow,TM,8,0,54.872
+Control High Flow,SC,8,0,96.3926667
+Control High Flow,CC,8,0,74.5156667
+Control High Flow,ISV,8,0,108.417333
+Control High Flow,TM,8,0,48.8963333
+Control High Flow,SC,8,0,114.965333
+Control High Flow,ISV,8,0,93.9033333
+Control High Flow,TM,8,0,53.7353333
+Control High Flow,SC,8,0,100.063667
+Control High Flow,ISV,8,0,98.3946667
+Control Low Flow,Uveal,4,0,90.1143333
+Control Low Flow,Corneaoscleral,4,0,87.7596667
+Control Low Flow,TM,4,0,66.568
+Control Low Flow,SC,4,0,76.8253333
+Control Low Flow,CC,4,0,128.075667
+Control Low Flow,ISV,4,0,114.477667
+Control Low Flow,Uveal,4,0,75.9206667
+Control Low Flow,Corneaoscleral,4,0,82.2133333
+Control Low Flow,TM,4,0,88.2133333
+Control Low Flow,SC,4,0,75.0416667
+Control Low Flow,CC,4,0,133.611333
+Control Low Flow,ISV,4,0,173.541
+Control Low Flow,Uveal,4,0,86.9393333
+Control Low Flow,Corneaoscleral,4,0,81.5386667
+Control Low Flow,TM,4,0,81.4336667
+Control Low Flow,SC,4,0,72.0756667
+Control Low Flow,CC,4,0,132.988333
+Control Low Flow,ISV,4,0,153.026667
+Control Low Flow,Uveal,4,0,93.19
+Control Low Flow,Corneaoscleral,4,0,70.6276667
+Control Low Flow,TM,4,0,79.064
+Control Low Flow,SC,4,0,87.0056667
+Control Low Flow,CC,4,0,116.492
+Control Low Flow,ISV,4,0,165.942667
+Control Low Flow,Uveal,4,0,103.113667
+Control Low Flow,Corneaoscleral,4,0,77.319
+Control Low Flow,TM,4,0,81.5256667
+Control Low Flow,SC,4,0,81.862
+Control Low Flow,CC,4,0,128.313
+Control Low Flow,ISV,4,0,128.521
+Control Low Flow,Uveal,4,0,101.609333
+Control Low Flow,Corneaoscleral,4,0,102.733667
+Control Low Flow,TM,4,0,104.945667
+Control Low Flow,SC,4,0,146.188333
+Control Low Flow,CC,4,0,145.752
+Control Low Flow,Uveal,4,0,112.246667
+Control Low Flow,Corneaoscleral,4,0,110.691333
+Control Low Flow,TM,4,0,134.442333
+Control Low Flow,SC,4,0,134.067667
+Control Low Flow,CC,4,0,175.975
+Control Low Flow,Uveal,4,0,88.6086667
+Control Low Flow,Corneaoscleral,4,0,119.146667
+Control Low Flow,TM,4,0,99.203
+Control Low Flow,SC,4,0,131.641
+Control Low Flow,CC,4,0,125.236667
+Control Low Flow,Uveal,4,0,144.020667
+Control Low Flow,Corneaoscleral,4,0,81.219
+Control Low Flow,TM,4,0,142.304
+Control Low Flow,SC,4,0,180.685667
+Control Low Flow,CC,4,0,136.289
+Control Low Flow,Uveal,4,0,139.32
+Control Low Flow,Corneaoscleral,4,0,79.1296667
+Control Low Flow,TM,4,0,111.991667
+Control Low Flow,SC,4,0,132.891333
+Control Low Flow,CC,4,0,138.347
+Control Low Flow,Uveal,5,0,81.7656667
+Control Low Flow,TM,5,0,81.7656667
+Control Low Flow,SC,5,0,122.570333
+Control Low Flow,CC,5,0,119.848333
+Control Low Flow,ESV,5,0,200.66
+Control Low Flow,Uveal,5,0,62.743
+Control Low Flow,TM,5,0,62.743
+Control Low Flow,SC,5,0,129.961333
+Control Low Flow,CC,5,0,140.892333
+Control Low Flow,ESV,5,0,206.326333
+Control Low Flow,Uveal,5,0,86.0783333
+Control Low Flow,TM,5,0,86.0783333
+Control Low Flow,SC,5,0,156.958333
+Control Low Flow,CC,5,0,141.211667
+Control Low Flow,ESV,5,0,203.845
+Control Low Flow,SC,5,0,147.579
+Control Low Flow,CC,5,0,109.822333
+Control Low Flow,ESV,5,0,235.365333
+Control Low Flow,SC,5,0,127.856667
+Control Low Flow,CC,5,0,136.001667
+Control Low Flow,ESV,5,0,198.580667
+Control Low Flow,Uveal,5,0,57.49
+Control Low Flow,Corneaoscleral,5,0,71.8386667
+Control Low Flow,TM,5,0,60.9446667
+Control Low Flow,SC,5,0,111.789
+Control Low Flow,CC,5,0,178.569
+Control Low Flow,ISV,5,0,152.993333
+Control Low Flow,Uveal,5,0,67.259
+Control Low Flow,Corneaoscleral,5,0,66.5083333
+Control Low Flow,TM,5,0,56.964
+Control Low Flow,SC,5,0,112.377
+Control Low Flow,CC,5,0,202.385667
+Control Low Flow,ISV,5,0,119.838333
+Control Low Flow,Uveal,5,0,80.3396667
+Control Low Flow,Corneaoscleral,5,0,63.457
+Control Low Flow,TM,5,0,51.5933333
+Control Low Flow,SC,5,0,144.867667
+Control Low Flow,CC,5,0,211.465
+Control Low Flow,ISV,5,0,111.777333
+Control Low Flow,Uveal,5,0,66.1753333
+Control Low Flow,Corneaoscleral,5,0,46.5083333
+Control Low Flow,TM,5,0,29.6566667
+Control Low Flow,SC,5,0,160.727333
+Control Low Flow,CC,5,0,176.912
+Control Low Flow,ISV,5,0,124.718333
+Control Low Flow,Uveal,5,0,70.749
+Control Low Flow,TM,5,0,55.9656667
+Control Low Flow,SC,5,0,154.152333
+Control Low Flow,CC,5,0,176.456333
+Control Low Flow,ISV,5,0,122.227333
+Control Low Flow,Uveal,8,0,61.401
+Control Low Flow,Corneaoscleral,8,0,66.522
+Control Low Flow,TM,8,0,61.401
+Control Low Flow,SC,8,0,77.8893333
+Control Low Flow,CC,8,0,116.767333
+Control Low Flow,ESV,8,0,241.663333
+Control Low Flow,Uveal,8,0,39.3226667
+Control Low Flow,Corneaoscleral,8,0,72.133
+Control Low Flow,TM,8,0,39.3226667
+Control Low Flow,SC,8,0,74.1643333
+Control Low Flow,CC,8,0,105.269
+Control Low Flow,ESV,8,0,227.388667
+Control Low Flow,Uveal,8,0,39.7123333
+Control Low Flow,Corneaoscleral,8,0,67.0606667
+Control Low Flow,TM,8,0,66.522
+Control Low Flow,SC,8,0,48.9956667
+Control Low Flow,CC,8,0,85.858
+Control Low Flow,ESV,8,0,121.013333
+Control Low Flow,TM,8,0,72.133
+Control Low Flow,SC,8,0,72.1686667
+Control Low Flow,CC,8,0,96.6406667
+Control Low Flow,ESV,8,0,137.385333
+Control Low Flow,TM,8,0,67.0606667
+Control Low Flow,SC,8,0,60.827
+Control Low Flow,CC,8,0,110.537333
+Control Low Flow,ESV,8,0,137.499667
+Control Low Flow,Uveal,8,0,86.7256667
+Control Low Flow,Corneaoscleral,8,0,68.4616667
+Control Low Flow,TM,8,0,68.4616667
+Control Low Flow,SC,8,0,99.761
+Control Low Flow,CC,8,0,151.619667
+Control Low Flow,ISV,8,0,128.637333
+Control Low Flow,ESV,8,0,127.225667
+Control Low Flow,Uveal,8,0,80.283
+Control Low Flow,Corneaoscleral,8,0,79.4166667
+Control Low Flow,TM,8,0,79.4166667
+Control Low Flow,SC,8,0,101.163667
+Control Low Flow,CC,8,0,135.221
+Control Low Flow,ISV,8,0,140.985667
+Control Low Flow,ESV,8,0,130.844667
+Control Low Flow,Uveal,8,0,96.081
+Control Low Flow,Corneaoscleral,8,0,77.8443333
+Control Low Flow,TM,8,0,94.177
+Control Low Flow,SC,8,0,73.9333333
+Control Low Flow,CC,8,0,121.682
+Control Low Flow,ISV,8,0,155.708333
+Control Low Flow,ESV,8,0,125.591333
+Control Low Flow,Uveal,8,0,83.328
+Control Low Flow,Corneaoscleral,8,0,70.221
+Control Low Flow,TM,8,0,86.7256667
+Control Low Flow,SC,8,0,77.3336667
+Control Low Flow,CC,8,0,143.329
+Control Low Flow,ISV,8,0,149.949667
+Control Low Flow,ESV,8,0,108.091
+Control Low Flow,Uveal,8,0,71.7473333
+Control Low Flow,Corneaoscleral,8,0,94.177
+Control Low Flow,TM,8,0,71.7473333
+Control Low Flow,SC,8,0,100.045333
+Control Low Flow,CC,8,0,67.2483333
+Control Low Flow,ISV,8,0,185.678333
+Control Low Flow,ESV,8,0,110.709667
+Non-Lasered,TM,1,0,48.5396667
+Non-Lasered,SC,1,0,112.489
+Non-Lasered,CC,1,0,84.7086667
+Non-Lasered,ISV,1,0,93.4483333
+Non-Lasered,ESV,1,0,56.4416667
+Non-Lasered,TM,1,0,39.1023333
+Non-Lasered,SC,1,0,69.6306667
+Non-Lasered,CC,1,0,60.3636667
+Non-Lasered,ISV,1,0,110.078333
+Non-Lasered,ESV,1,0,57.881
+Non-Lasered,TM,1,0,44.062
+Non-Lasered,SC,1,0,56.2316667
+Non-Lasered,CC,1,0,91.4483333
+Non-Lasered,ISV,1,0,102.391333
+Non-Lasered,ESV,1,0,88.085
+Non-Lasered,TM,1,0,47.918
+Non-Lasered,ISV,1,0,96.574
+Non-Lasered,ESV,1,0,88.1846667
+Non-Lasered,ISV,1,0,79.2866667
+Non-Lasered,ESV,1,0,66.796
+Non-Lasered,TM,2,1,99.707
+Non-Lasered,SC,2,1,113.125
+Non-Lasered,CC,2,1,93.1163333
+Non-Lasered,ISV,2,1,101.109333
+Non-Lasered,TM,2,1,75.2273333
+Non-Lasered,SC,2,1,115.058
+Non-Lasered,CC,2,1,99.1936667
+Non-Lasered,ISV,2,1,85.3983333
+Non-Lasered,TM,2,1,73.4666667
+Non-Lasered,SC,2,1,159.988667
+Non-Lasered,CC,2,1,88.391
+Non-Lasered,ISV,2,1,91.5983333
+Non-Lasered,TM,2,1,57.9713333
+Non-Lasered,SC,2,1,126.780667
+Non-Lasered,CC,2,1,111.422
+Non-Lasered,ISV,2,1,146.713667
+Non-Lasered,TM,2,1,66.664
+Non-Lasered,SC,2,1,179.141
+Non-Lasered,CC,2,1,117.860333
+Non-Lasered,ISV,2,1,105.026
+Non-Lasered,TM,2,1,84.129
+Non-Lasered,SC,2,1,83.9993333
+Non-Lasered,CC,2,1,79.5276667
+Non-Lasered,TM,2,1,81.534
+Non-Lasered,SC,2,1,79.188
+Non-Lasered,CC,2,1,102.934667
+Non-Lasered,TM,2,1,87.7756667
+Non-Lasered,SC,2,1,93.0033333
+Non-Lasered,CC,2,1,94.391
+Non-Lasered,TM,2,1,59.296
+Non-Lasered,SC,2,1,87.2813333
+Non-Lasered,CC,2,1,85.8503333
+Non-Lasered,TM,2,1,61.2863333
+Non-Lasered,SC,2,1,101.084
+Non-Lasered,CC,2,1,81.991
+Non-Lasered,TM,5,1,75.7453333
+Non-Lasered,SC,5,1,60.8666667
+Non-Lasered,ISV,5,1,134.277667
+Non-Lasered,ESV,5,1,130.625
+Non-Lasered,TM,5,1,79.8813333
+Non-Lasered,SC,5,1,113.154
+Non-Lasered,ISV,5,1,147.994
+Non-Lasered,ESV,5,1,155.896333
+Non-Lasered,TM,5,1,110.434667
+Non-Lasered,SC,5,1,72.4663333
+Non-Lasered,ISV,5,1,148.053
+Non-Lasered,ESV,5,1,135.413667
+Non-Lasered,TM,5,1,81.935
+Non-Lasered,SC,5,1,88.1926667
+Non-Lasered,ISV,5,1,142.301333
+Non-Lasered,ESV,5,1,143.487333
+Non-Lasered,TM,5,1,79.6673333
+Non-Lasered,SC,5,1,92.6166667
+Non-Lasered,ISV,5,1,122.428333
+Non-Lasered,ESV,5,1,148.955
+Non-Lasered,TM,5,1,67.0186667
+Non-Lasered,SC,5,1,100.085667
+Non-Lasered,CC,5,1,114.379667
+Non-Lasered,ESV,5,1,123.395667
+Non-Lasered,TM,5,1,55.4086667
+Non-Lasered,SC,5,1,99.373
+Non-Lasered,CC,5,1,98.307
+Non-Lasered,ESV,5,1,146.786667
+Non-Lasered,TM,5,1,55.96
+Non-Lasered,SC,5,1,79.0696667
+Non-Lasered,CC,5,1,110.681667
+Non-Lasered,ESV,5,1,174.481333
+Non-Lasered,TM,5,1,77.0863333
+Non-Lasered,SC,5,1,94.532
+Non-Lasered,CC,5,1,93.168
+Non-Lasered,ESV,5,1,164.213
+Non-Lasered,TM,5,1,52.4923333
+Non-Lasered,SC,5,1,95.056
+Non-Lasered,CC,5,1,83.7483333
+Non-Lasered,ESV,5,1,98.6133333
+Non-Lasered,TM,6,1,71.4846667
+Non-Lasered,SC,6,1,120.860667
+Non-Lasered,CC,6,1,179.087333
+Non-Lasered,ISV,6,1,121.162667
+Non-Lasered,ESV,6,1,204.756
+Non-Lasered,TM,6,1,70.522
+Non-Lasered,SC,6,1,151.307
+Non-Lasered,CC,6,1,185.289333
+Non-Lasered,ISV,6,1,148.866667
+Non-Lasered,ESV,6,1,174.669667
+Non-Lasered,TM,6,1,117.469333
+Non-Lasered,SC,6,1,121.666667
+Non-Lasered,CC,6,1,171.735667
+Non-Lasered,ISV,6,1,142.598
+Non-Lasered,ESV,6,1,204.689
+Non-Lasered,TM,6,1,86.1936667
+Non-Lasered,SC,6,1,104.011667
+Non-Lasered,CC,6,1,160.759667
+Non-Lasered,ISV,6,1,158.427667
+Non-Lasered,ESV,6,1,198.365667
+Non-Lasered,TM,6,1,70.289
+Non-Lasered,SC,6,1,122.040667
+Non-Lasered,CC,6,1,165.409
+Non-Lasered,ISV,6,1,144.464333
+Non-Lasered,ESV,6,1,197.541667
+Non-Lasered,TM,6,1,93.3053333
+Non-Lasered,SC,6,1,109.571667
+Non-Lasered,CC,6,1,141.531
+Non-Lasered,ISV,6,1,185.77
+Non-Lasered,ESV,6,1,211.188667
+Non-Lasered,TM,6,1,114.885333
+Non-Lasered,SC,6,1,105.628
+Non-Lasered,CC,6,1,138.167667
+Non-Lasered,ISV,6,1,171.611
+Non-Lasered,ESV,6,1,174.477667
+Non-Lasered,TM,6,1,86.0696667
+Non-Lasered,SC,6,1,86.0306667
+Non-Lasered,CC,6,1,146.834667
+Non-Lasered,ISV,6,1,119.661667
+Non-Lasered,ESV,6,1,164.535
+Non-Lasered,TM,6,1,71.8686667
+Non-Lasered,SC,6,1,92.7316667
+Non-Lasered,CC,6,1,125.064333
+Non-Lasered,ISV,6,1,190.966667
+Non-Lasered,ESV,6,1,163.618667
+Non-Lasered,TM,6,1,68.9413333
+Non-Lasered,SC,6,1,93.086
+Non-Lasered,CC,6,1,177.401667
+Non-Lasered,ISV,6,1,191.738
+Non-Lasered,ESV,6,1,172.688667
