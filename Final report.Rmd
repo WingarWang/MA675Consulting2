@@ -1,0 +1,87 @@
+---
+title: "Glycocalyx Study Report"
+author: "MSSP Consulting Group 4"
+date: "12/15/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, highlight=FALSE)
+knitr::opts_chunk$set(fig.width=6, fig.height=5,fig.align="center")
+
+library(tidyverse)
+library(readxl)
+library(magrittr)
+library(lmerTest)
+library("rstanarm")
+library("lme4")
+```
+
+```{r}
+#Read in height and coverage files
+glyco_h <- read_excel("glycocalyx_clean(height).xlsx", na = "no good/none")
+glyco_c <- read_excel("glycocalyx_clean(coverage).xlsx", na = c("no good/none", "no good /none"))
+
+#Filter out null rows
+glyco_h <- filter(glyco_h, !is.na(Eye))
+glyco_c <- filter(glyco_c, !is.na(Eye))
+
+#Tidy the datasets
+glyco_h <- glyco_h %>%
+  pivot_longer(cols = -c(Eye, Region), names_to = "Outflow_Location", values_to = "height") %>%
+  mutate(L_or_R = substr(Eye,5,5), monkey = substr(Eye,3,3)) %>%
+  mutate(left = ifelse(L_or_R == "S",1,0)) %>%
+  mutate(monkey = as.factor(monkey), Region = as.factor(Region), Outflow_Location = as.factor(Outflow_Location)) %>%
+  select(Region, Outflow_Location, monkey, left, height) %>%
+  filter(!is.na(height))
+
+glyco_c <- glyco_c %>%
+  pivot_longer(cols = -c(Eye, Region), names_to = "Outflow_Location", values_to = "coverage") %>%
+  mutate(L_or_R = substr(Eye,5,5), monkey = substr(Eye,3,3)) %>%
+  mutate(left = ifelse(L_or_R == "S",1,0)) %>%
+  mutate(monkey = as.factor(monkey), Region = as.factor(Region), Outflow_Location = as.factor(Outflow_Location)) %>%
+  select(Region, Outflow_Location, monkey, left, coverage) %>%
+  filter(!is.na(coverage))
+```
+
+```{r,include=FALSE}
+#Model to show results by plotting
+sfit_c2 <- stan_lmer(coverage ~ 1 +Region+Outflow_Location+  (1|Region:Outflow_Location) + left + (1|monkey), data = glyco_c)
+
+sfit_h2 <- stan_lmer(log(height) ~ 1 +Region+Outflow_Location+  (1|Region:Outflow_Location) + left + (1|monkey), data = glyco_h)
+
+#postsample=as.matrix(sfit_c2)
+#postsample=as.matrix(sfit_h2)
+```
+
+```{r}
+fixef(sfit_c2) #fixed effect c
+```
+
+```{r}
+ranef(sfit_c2) #random effect c
+```
+
+```{r}
+fixef(sfit_h2) #fixed effect h
+```
+
+```{r}
+ranef(sfit_h2) #random effect h
+```
+
+```{r, fig.height=8, fig.width=12, fig.cap="Random effect plot"}
+plot(sfit_c2) # random effect plot
+plot(sfit_h2) # random effect plot
+```
+
+
+
+
+
+
+
+
+
+
+

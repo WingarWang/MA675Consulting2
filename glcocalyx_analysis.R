@@ -2,6 +2,9 @@ library(tidyverse)
 library(readxl)
 library(magrittr)
 library(lmerTest)
+library("rstanarm")
+library("lme4")
+library("lmer")
 
 #Read in height and coverage files
 glyco_h <- read_excel("glycocalyx_clean(height).xlsx", na = "no good/none")
@@ -47,17 +50,17 @@ sfit_c <- stan_lmer(log(coverage) ~ 1 +  Region*Outflow_Location + left + (1|mon
 #Model to show results by plotting
 sfit_c2 <- stan_lmer(coverage ~ 1 +Region+Outflow_Location+  (1|Region:Outflow_Location) + left + (1|monkey), data = glyco_c)
 plot(sfit_c2)
-postsample=as.matrix(sfit_c)
+postsample=as.matrix(sfit_c2)
+summary(sfit_c2)
 
 sfit_h2 <- stan_lmer(log(height) ~ 1 +Region+Outflow_Location+  (1|Region:Outflow_Location) + left + (1|monkey), data = glyco_h)
 plot(sfit_h2)
+summary(sfit_h2)
 
 #We could add together all the coeffs to get results, or we can give random intercepts to the interaction
 #By doing the second version, we can plot to see coeff estimates. 
 #We mainly see that Control High Flow and Control Low Flow regions seem to differ from Control and non-lasered
 #Can also point out that Non-lasered SC is closest to significant when comparing within region, especially against Control SC.
-
-
 
 
 
@@ -115,4 +118,5 @@ plot(sfit_h2)
 #   print(summary(fit))
 #   print(plot(fit, main = paste("Coverages: Comparing Locations in Region",reg, sep = " ")))
 # }
+
 
