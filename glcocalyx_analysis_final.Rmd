@@ -77,16 +77,12 @@ fixef(sfit_h2) #fixed effect h
 
 # ranef(sfit_c2) #random effect c
 # ranef(sfit_h2) #random effect h
+
+# plot(sfit_c2) # random effect plot
+# plot(sfit_h2) # random effect plot
 ```
 
-```{r, fig.height=8, fig.width=12, fig.cap="Random effect plot"}
-plot(sfit_c2) # random effect plot
-plot(sfit_h2) # random effect plot
-```
 
-```{r}
-
-```
 
 
 
