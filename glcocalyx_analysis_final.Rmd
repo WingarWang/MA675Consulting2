@@ -15,6 +15,7 @@ library(magrittr)
 library(lmerTest)
 library("rstanarm")
 library("lme4")
+library("bayesplot")
 ```
 
 ```{r}
@@ -42,6 +43,11 @@ glyco_c <- glyco_c %>%
   mutate(monkey = as.factor(monkey), Region = as.factor(Region), Outflow_Location = as.factor(Outflow_Location)) %>%
   select(Region, Outflow_Location, monkey, left, coverage) %>%
   filter(!is.na(coverage))
+
+# check <- glyco_c %>% count(Outflow_Location)
+# check
+# check2 <- glyco_c %>% count(Region)
+# check2
 ```
 
 ```{r,include=FALSE}
@@ -55,19 +61,22 @@ sfit_h2 <- stan_lmer(log(height) ~ 1 +Region+Outflow_Location+  (1|Region:Outflo
 ```
 
 ```{r}
+posterior_interval(sfit_c2, prob=0.95)
+posterior_interval(sfit_h2, prob=0.95)
+### https://stephens999.github.io/fiveMinuteStats/summarize_interpret_posterior.html
+```
+
+```{r}
+pp_check(sfit_c2)
+pp_check(sfit_h2)
+```
+
+```{r}
 fixef(sfit_c2) #fixed effect c
-```
-
-```{r}
-ranef(sfit_c2) #random effect c
-```
-
-```{r}
 fixef(sfit_h2) #fixed effect h
-```
 
-```{r}
-ranef(sfit_h2) #random effect h
+# ranef(sfit_c2) #random effect c
+# ranef(sfit_h2) #random effect h
 ```
 
 ```{r, fig.height=8, fig.width=12, fig.cap="Random effect plot"}
@@ -75,12 +84,9 @@ plot(sfit_c2) # random effect plot
 plot(sfit_h2) # random effect plot
 ```
 
+```{r}
 
-
-
-
-
-
+```
 
 
 
