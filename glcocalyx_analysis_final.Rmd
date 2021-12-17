@@ -83,8 +83,14 @@ pp_check(sfit_h2)
 ```
 
 ```{r}
-fixef(sfit_c2) #fixed effect c
-fixef(sfit_h2) #fixed effect h
+a<-fixef(sfit_c2) #fixed effect c
+postsample1<-as.matrix(a)
+postsample1<-as.table(postsample1)
+postsample1
+
+b<-fixef(sfit_h2) #fixed effect h
+postsample2<-as.matrix(b)
+postsample2
 
 # ranef(sfit_c2) #random effect c
 # ranef(sfit_h2) #random effect h
@@ -94,14 +100,55 @@ fixef(sfit_h2) #fixed effect h
 ```
 
 ```{r}
-plot(sfit_c2, pars=c("(Intercept)","RegionControl High Flow","RegionControl Low Flow","RegionNon-Lasered","Outflow_LocationCorneaoscleral","Outflow_LocationESV","Outflow_LocationISV","Outflow_LocationSC","Outflow_LocationTM","Outflow_LocationUveal"))
+plot(sfit_c2, pars=c("RegionControl High Flow","RegionControl Low Flow","RegionNon-Lasered","Outflow_LocationCorneaoscleral","Outflow_LocationESV","Outflow_LocationISV","Outflow_LocationSC","Outflow_LocationTM","Outflow_LocationUveal"))
 
 plot(sfit_c2, regex_pars = "^b\\[\\(Intercept)\\ Region")
 
-plot(sfit_h2, pars=c("(Intercept)","RegionControl High Flow","RegionControl Low Flow","RegionNon-Lasered","Outflow_LocationCorneaoscleral","Outflow_LocationESV","Outflow_LocationISV","Outflow_LocationSC","Outflow_LocationTM","Outflow_LocationUveal"))
+plot(sfit_h2, pars=c("RegionControl High Flow","RegionControl Low Flow","RegionNon-Lasered","Outflow_LocationCorneaoscleral","Outflow_LocationESV","Outflow_LocationISV","Outflow_LocationSC","Outflow_LocationTM","Outflow_LocationUveal"))
 
 plot(sfit_h2, regex_pars = "^b\\[\\(Intercept)\\ Region")
 ```
+
+```{r}
+# significant
+#https://www.zhihu.com/question/273644403
+
+hist(glyco_c$coverage)
+hist(glyco_h$height)
+hist(glyco_h$log(height))
+glyco_h$a <- log(height)
+
+x <- glyco_c$coverage
+h<-hist(x, breaks=10, col="red", xlab="Miles Per Gallon",
+   main="Histogram with Normal Curve")
+xfit<-seq(min(x),max(x),length=40)
+yfit<-dnorm(xfit,mean=mean(x),sd=sd(x))
+yfit <- yfit*diff(h$mids[1:2])*length(x)
+lines(xfit, yfit, col="blue", lwd=2)
+```
+
+
+```{r}
+boxplot(coverage~Outflow_Location,data=glyco_c, main="Car Milage Data",
+   xlab="location", ylab="coverage")
+boxplot(coverage~Region,data=glyco_c, main="Car Milage Data",
+   xlab="location", ylab="coverage")
+
+ggplot(glyco_c, aes(x=Outflow_Location, y=coverage, color=Region)) +
+  geom_boxplot() 
+
+ggplot(glyco_c, aes(x=Region, y=coverage, color=Outflow_Location)) +
+  geom_boxplot() 
+
+ggplot(glyco_h, aes(x=Outflow_Location, y=height, color=Region)) +
+  geom_boxplot() 
+
+ggplot(glyco_h, aes(x=Region, y=height, color=Outflow_Location)) +
+  geom_boxplot() 
+```
+
+
+
 
 
 
