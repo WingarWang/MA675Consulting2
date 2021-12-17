@@ -16,6 +16,7 @@ library(lmerTest)
 library("rstanarm")
 library("lme4")
 library("bayesplot")
+library("bruceR")
 ```
 
 ```{r}
@@ -61,6 +62,16 @@ sfit_h2 <- stan_lmer(log(height) ~ 1 +Region+Outflow_Location+  (1|Region:Outflo
 ```
 
 ```{r}
+summary(sfit_c2, 
+       probs = c(0.025, 0.975),
+        digits = 2)
+summary(sfit_h2, 
+       probs = c(0.025, 0.975),
+        digits = 2)
+```
+
+
+```{r}
 posterior_interval(sfit_c2, prob=0.95)
 posterior_interval(sfit_h2, prob=0.95)
 ### https://stephens999.github.io/fiveMinuteStats/summarize_interpret_posterior.html
@@ -78,10 +89,19 @@ fixef(sfit_h2) #fixed effect h
 # ranef(sfit_c2) #random effect c
 # ranef(sfit_h2) #random effect h
 
-# plot(sfit_c2) # random effect plot
-# plot(sfit_h2) # random effect plot
+# plot(sfit_c2) # fixed and random effect plot
+# plot(sfit_h2) # fixed and random effect plot
 ```
 
+```{r}
+plot(sfit_c2, pars=c("(Intercept)","RegionControl High Flow","RegionControl Low Flow","RegionNon-Lasered","Outflow_LocationCorneaoscleral","Outflow_LocationESV","Outflow_LocationISV","Outflow_LocationSC","Outflow_LocationTM","Outflow_LocationUveal"))
+
+plot(sfit_c2, regex_pars = "^b\\[\\(Intercept)\\ Region")
+
+plot(sfit_h2, pars=c("(Intercept)","RegionControl High Flow","RegionControl Low Flow","RegionNon-Lasered","Outflow_LocationCorneaoscleral","Outflow_LocationESV","Outflow_LocationISV","Outflow_LocationSC","Outflow_LocationTM","Outflow_LocationUveal"))
+
+plot(sfit_h2, regex_pars = "^b\\[\\(Intercept)\\ Region")
+```
 
 
 
