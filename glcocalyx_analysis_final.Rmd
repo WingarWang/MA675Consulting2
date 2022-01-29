@@ -45,6 +45,8 @@ glyco_c <- glyco_c %>%
   select(Region, Outflow_Location, monkey, left, coverage) %>%
   filter(!is.na(coverage))
 
+glyco_c <- mutate(glyco_c, coverage_p = coverage/100)
+
 # check <- glyco_c %>% count(Outflow_Location)
 # check
 # check2 <- glyco_c %>% count(Region)
@@ -53,7 +55,8 @@ glyco_c <- glyco_c %>%
 
 ```{r,include=FALSE}
 #Model to show results by plotting
-sfit_c2 <- stan_lmer(coverage ~ 1 +Region+Outflow_Location+  (1|Region:Outflow_Location) + left + (1|monkey), data = glyco_c)
+hist(glyco_c$coverage_p)
+sfit_c2 <- stan_lmer(qlogis(coverage_p) ~ 1 + Region + Outflow_Location +  (1|Region:Outflow_Location) + left + (1|monkey), data = glyco_c)
 
 sfit_h2 <- stan_lmer(log(height) ~ 1 +Region+Outflow_Location+  (1|Region:Outflow_Location) + left + (1|monkey), data = glyco_h)
 
@@ -113,12 +116,11 @@ plot(sfit_h2, regex_pars = "^b\\[\\(Intercept)\\ Region")
 # significant
 #https://www.zhihu.com/question/273644403
 
-hist(glyco_c$coverage)
-hist(glyco_h$height)
-hist(glyco_h$log(height))
-glyco_h$a <- log(height)
+hist(qlogis(glyco_c$coverage_p))
+hist(log(glyco_h$height))
 
-x <- glyco_c$coverage
+
+x <- qlogis(glyco_c$coverage_p)
 h<-hist(x, breaks=10, col="red", xlab="Miles Per Gallon",
    main="Histogram with Normal Curve")
 xfit<-seq(min(x),max(x),length=40)
@@ -129,9 +131,9 @@ lines(xfit, yfit, col="blue", lwd=2)
 
 
 ```{r}
-boxplot(coverage~Outflow_Location,data=glyco_c, main="Car Milage Data",
+boxplot(coverage~Outflow_Location,data=glyco_c,
    xlab="location", ylab="coverage")
-boxplot(coverage~Region,data=glyco_c, main="Car Milage Data",
+boxplot(coverage~Region,data=glyco_c,
    xlab="location", ylab="coverage")
 
 ggplot(glyco_c, aes(x=Outflow_Location, y=coverage, color=Region)) +
