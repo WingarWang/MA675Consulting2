@@ -121,7 +121,15 @@ hist(log(glyco_h$height))
 
 
 x <- qlogis(glyco_c$coverage_p)
-h<-hist(x, breaks=10, col="red", xlab="Miles Per Gallon",
+h<-hist(x, breaks=10, col="red",
+   main="Histogram with Normal Curve")
+xfit<-seq(min(x),max(x),length=40)
+yfit<-dnorm(xfit,mean=mean(x),sd=sd(x))
+yfit <- yfit*diff(h$mids[1:2])*length(x)
+lines(xfit, yfit, col="blue", lwd=2)
+
+x <- log(glyco_h$height)
+h<-hist(x, breaks=15, col="red",
    main="Histogram with Normal Curve")
 xfit<-seq(min(x),max(x),length=40)
 yfit<-dnorm(xfit,mean=mean(x),sd=sd(x))
