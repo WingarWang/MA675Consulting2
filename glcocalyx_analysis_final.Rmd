@@ -52,6 +52,42 @@ glyco_c <- mutate(glyco_c, coverage_p = coverage/100)
 # check2 <- glyco_c %>% count(Region)
 # check2
 
+#Normal distribution groups checks
+hist(filter(glyco_c, Region == "Control")$coverage_p)
+hist(filter(glyco_c, Region == "Control High Flow")$coverage_p)  #1.10
+hist(filter(glyco_c, Region == "Control Low Flow")$coverage_p) #1.10
+hist(filter(glyco_c, Region == "Non-Lasered")$coverage_p) #0.82
+
+hist(log(filter(glyco_h, Region == "Control")$height)) #0.27
+hist(log(filter(glyco_h, Region == "Control High Flow")$height))  #0.15
+hist(log(filter(glyco_h, Region == "Control Low Flow")$height)) #0.15
+hist(log(filter(glyco_h, Region == "Non-Lasered")$height)) #0.138
+
+
+
+hist(filter(glyco_c, Outflow_Location == "SC")$coverage_p) #0.83
+hist(filter(glyco_c, Outflow_Location == "CC")$coverage_p)
+#1.13
+hist(filter(glyco_c, Outflow_Location == "ISV")$coverage_p)
+#1.03
+hist(filter(glyco_c, Outflow_Location == "ESV")$coverage_p)
+#0.92
+hist(filter(glyco_c, Outflow_Location == "TM")$coverage_p)
+#0.53
+hist(filter(glyco_c, Outflow_Location == "Uveal")$coverage_p)
+#1.05
+hist(filter(glyco_c, Outflow_Location == "Corneaoscleral")$coverage_p)
+#1.42
+
+hist(log(filter(glyco_h, Outflow_Location == "SC")$height)) #0.11
+hist(log(filter(glyco_h, Outflow_Location == "CC")$height)) #0.13
+hist(log(filter(glyco_h, Outflow_Location == "ISV")$height)) #0.19
+hist(log(filter(glyco_h, Outflow_Location == "ESV")$height)) #0.15
+hist(log(filter(glyco_h, Outflow_Location == "TM")$height)) #0.10
+hist(log(filter(glyco_h, Outflow_Location == "Uveal")$height)) #0.09
+hist(log(filter(glyco_h, Outflow_Location == "Corneaoscleral")$height)) #0.09
+
+
 #Variance group checks
 var(filter(glyco_c, Region == "Control")$coverage_p) #0.87
 var(filter(glyco_c, Region == "Control High Flow")$coverage_p)  #1.10
