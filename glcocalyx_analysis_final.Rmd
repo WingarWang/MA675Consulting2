@@ -75,6 +75,7 @@ hist(filter(glyco_c, Outflow_Location == "Uveal")$coverage_p)
 #1.05
 hist(filter(glyco_c, Outflow_Location == "Corneaoscleral")$coverage_p)
 #1.42
+
 hist(log(filter(glyco_h, Outflow_Location == "SC")$height)) #0.11
 hist(log(filter(glyco_h, Outflow_Location == "CC")$height)) #0.13
 hist(log(filter(glyco_h, Outflow_Location == "ISV")$height)) #0.19
