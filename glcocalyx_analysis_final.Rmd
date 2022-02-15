@@ -22,7 +22,7 @@ library("bruceR")
 ```{r}
 #Read in height and coverage files
 glyco_h <- read_excel("Glycocalyx_Feb(Heights_fix).xlsx", na = c("no good/none", "None/Not labeled"))
-glyco_c <- read_excel("glycocalyx_clean(coverage).xlsx", na = c("no good/none", "no good /none", "None/Not labeled"))
+glyco_c <- read_excel("Glycocalyx_Feb(Coverage_fix).xlsx", na = c("no good/none", "no good /none", "None/Not labeled", "None/not labeled"))
 
 #Filter out null rows
 glyco_h <- filter(glyco_h, !is.na(Eye))
