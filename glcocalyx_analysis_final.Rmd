@@ -51,7 +51,10 @@ glyco_c <- mutate(glyco_c, coverage_p = coverage/100)
 # check
 # check2 <- glyco_c %>% count(Region)
 # check2
+```
 
+
+```{r}
 #Normal distribution groups checks
 hist(qlogis(filter(glyco_c, Region == "Control")$coverage_p))
 hist(qlogis(filter(glyco_c, Region == "Control High Flow")$coverage_p))  #1.10
@@ -130,7 +133,9 @@ sfit_h2 <- stan_lmer(log(height) ~ 1 +Region+Outflow_Location+  (1|Region:Outflo
 
 #postsample=as.matrix(sfit_c2)
 #postsample=as.matrix(sfit_h2)
+```
 
+```{r}
 cov_reg <- aov(qlogis(coverage_p) ~ Region + Outflow_Location, data = glyco_c)
 summary(cov_reg)
 TukeyHSD(cov_reg, conf.level = 0.95)
