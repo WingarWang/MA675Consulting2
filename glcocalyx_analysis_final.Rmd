@@ -119,10 +119,11 @@ var(log(filter(glyco_h, Outflow_Location == "ESV")$height)) #0.15
 var(log(filter(glyco_h, Outflow_Location == "TM")$height)) #0.10
 var(log(filter(glyco_h, Outflow_Location == "Uveal")$height)) #0.09
 var(log(filter(glyco_h, Outflow_Location == "Corneaoscleral")$height)) #0.09
-
-
-
 ```
+
+
+
+
 
 ```{r,include=FALSE}
 #Model to show results by plotting
@@ -136,13 +137,25 @@ sfit_h2 <- stan_lmer(log(height) ~ 1 +Region+Outflow_Location+  (1|Region:Outflo
 ```
 
 ```{r}
-cov_reg <- aov(qlogis(coverage_p) ~ Region + Outflow_Location, data = glyco_c)
+cov_reg <- aov(qlogis(coverage_p) ~ Region + Outflow_Location + left + monkey, data = glyco_c)
 summary(cov_reg)
-TukeyHSD(cov_reg, conf.level = 0.95)
+r1 <- TukeyHSD(cov_reg, which = c("Region", "Outflow_Location"), conf.level = 0.95)
 
-hei_reg <- aov(log(height) ~ Region + Outflow_Location, data = glyco_h)
-summary(hei_reg)
-TukeyHSD(hei_reg, conf.level = 0.95)
+hei_reg <- aov(log(height) ~ Region + Outflow_Location + left + monkey, data = glyco_h)
+#summary(hei_reg)
+r2 <- TukeyHSD(hei_reg, which = c("Region", "Outflow_Location"), conf.level = 0.95)
+
+
+r1
+r2
+
+op=par(mar=c(4.2,14,3.8,2))
+plot(r1, las = 1)
+par(op)
+
+op=par(mar=c(4.2,14,3.8,2))
+plot(r2, las = 1)
+par(op)
 ```
 
 ```{r}
