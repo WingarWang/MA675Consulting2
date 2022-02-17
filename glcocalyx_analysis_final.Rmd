@@ -146,8 +146,6 @@ hei_reg <- aov(log(height) ~ Region + Outflow_Location + left + monkey, data = g
 r2 <- TukeyHSD(hei_reg, which = c("Region", "Outflow_Location"), conf.level = 0.95)
 
 
-r1
-r2
 
 op=par(mar=c(4.2,14,3.8,2))
 plot(r1, las = 1)
@@ -197,9 +195,9 @@ postsample2
 ```
 
 ```{r}
-plot(sfit_c2, pars=c("RegionControl High Flow","RegionControl Low Flow","RegionNon-Lasered","Outflow_LocationCorneaoscleral","Outflow_LocationESV","Outflow_LocationISV","Outflow_LocationSC","Outflow_LocationTM","Outflow_LocationUveal"))
+plot(sfit_c2, pars=c("RegionControl High Flow","RegionControl Low Flow","RegionNon-Lasered","Outflow_LocationCorneaoscleral","Outflow_LocationESV","Outflow_LocationISV","Outflow_LocationSC","Outflow_LocationTM","Outflow_LocationUveal"), main = "Coverage Fixed Effects")
 
-plot(sfit_c2, regex_pars = "^b\\[\\(Intercept)\\ Region")
+plot(sfit_c2, regex_pars = "^b\\[\\(Intercept)\\ Region", main = "Coverage Random Effects")
 
 plot(sfit_h2, pars=c("RegionControl High Flow","RegionControl Low Flow","RegionNon-Lasered","Outflow_LocationCorneaoscleral","Outflow_LocationESV","Outflow_LocationISV","Outflow_LocationSC","Outflow_LocationTM","Outflow_LocationUveal"))
 
@@ -233,9 +231,9 @@ lines(xfit, yfit, col="blue", lwd=2)
 
 
 ```{r}
-boxplot(coverage~Outflow_Location,data=glyco_c,
+boxplot(qlogis(coverage_p)~Outflow_Location,data=glyco_c,
    xlab="location", ylab="coverage")
-boxplot(coverage~Region,data=glyco_c,
+boxplot(qlogis(coverage_p)~Region,data=glyco_c,
    xlab="location", ylab="coverage")
 
 boxplot(log(height)~Outflow_Location,data=glyco_h,
