@@ -136,6 +136,40 @@ sfit_h2 <- stan_lmer(log(height) ~ 1 +Region+Outflow_Location+  (1|Region:Outflo
 #postsample=as.matrix(sfit_h2)
 ```
 
+```{r}
+tuk_plot <- function (x, main, xlab, ylab, ylabels = NULL, ...) {
+  for (i in seq_along(x)) {
+    xi <- x[[i]][, -4L, drop = FALSE]
+    yvals <- nrow(xi):1L
+    dev.hold()
+    on.exit(dev.flush())
+    plot(c(xi[, "lwr"], xi[, "upr"]), rep.int(yvals, 2L), 
+         type = "n", axes = FALSE, xlab = "", ylab = "", main = NULL, 
+         ...)
+    axis(1, ...)
+    # change for custom axis labels
+    if (is.null(ylabels)) ylabels <- dimnames(xi)[[1L]]
+
+    axis(2, at = nrow(xi):1, labels = ylabels, 
+         srt = 0, ...)
+    abline(h = yvals, lty = 1, lwd = 0.5, col = "lightgray")
+    abline(v = 0, lty = 2, lwd = 0.5, ...)
+    segments(xi[, "lwr"], yvals, xi[, "upr"], yvals, ...)
+    segments(as.vector(xi), rep.int(yvals - 0.1, 3L), as.vector(xi), 
+             rep.int(yvals + 0.1, 3L), ...)
+    title(main = paste0(format(100 * attr(x, "conf.level"), 
+                               digits = 2L), "% family-wise confidence level",main,"\n"), 
+          # change for custom axis titles
+          xlab = xlab, ylab = ylab)
+
+    box()
+    dev.flush()
+    on.exit()
+  }
+}
+```
+
+
 Tukey Tests
 ```{r}
 regions <- c("Control", "Control High Flow", "Control Low Flow", "Non-Lasered")
@@ -146,7 +180,7 @@ for (region in regions){
   cov_reg <- aov(qlogis(coverage_p) ~ Outflow_Location + left + monkey, data = c_r)
   r1 <- TukeyHSD(cov_reg, which = "Outflow_Location", conf.level = 0.95)
   op=par(mar=c(4.2,14,3.8,2))
-  plot(r1, las = 1)
+  tuk_plot(r1, region, "Difference in Means", "Outflow Location")
   par(op)
 }
 
