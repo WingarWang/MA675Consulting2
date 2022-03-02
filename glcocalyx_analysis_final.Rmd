@@ -137,41 +137,38 @@ sfit_h2 <- stan_lmer(log(height) ~ 1 +Region+Outflow_Location+  (1|Region:Outflo
 ```
 
 ```{r}
-tuk_plot <- function (x, main, xlab, ylab, ylabels = NULL, ...) {
-  for (i in seq_along(x)) {
-    xi <- x[[i]][, -4L, drop = FALSE]
-    yvals <- nrow(xi):1L
-    dev.hold()
-    on.exit(dev.flush())
-    plot(c(xi[, "lwr"], xi[, "upr"]), rep.int(yvals, 2L), 
-         type = "n", axes = FALSE, xlab = "", ylab = "", main = NULL, 
-         ...)
-    axis(1, ...)
-    # change for custom axis labels
-    if (is.null(ylabels)) ylabels <- dimnames(xi)[[1L]]
-
-    axis(2, at = nrow(xi):1, labels = ylabels, 
-         srt = 0, ...)
-    abline(h = yvals, lty = 1, lwd = 0.5, col = "lightgray")
-    abline(v = 0, lty = 2, lwd = 0.5, ...)
-    segments(xi[, "lwr"], yvals, xi[, "upr"], yvals, ...)
-    segments(as.vector(xi), rep.int(yvals - 0.1, 3L), as.vector(xi), 
-             rep.int(yvals + 0.1, 3L), ...)
-    title(main = paste0(format(100 * attr(x, "conf.level"), 
-                               digits = 2L), "% family-wise confidence level",main,"\n"), 
-          # change for custom axis titles
-          xlab = xlab, ylab = ylab)
-
-    box()
-    dev.flush()
-    on.exit()
-  }
+tuk_plot <- function (x, main, ...){
+    for (i in seq_along(x)) {
+        xi <- x[[i]][, -4L, drop = FALSE]
+        yvals <- nrow(xi):1L
+        dev.hold()
+        on.exit(dev.flush())
+        plot(c(xi[, "lwr"], xi[, "upr"]), rep.int(yvals, 
+            2L), type = "n", axes = FALSE, xlab = "", 
+            ylab = "", main = NULL, ...)
+        axis(1, ...)
+        axis(2, at = nrow(xi):1, labels = dimnames(xi)[[1L]], 
+            srt = 0, ...)
+        abline(h = yvals, lty = 1, lwd = 0.5, col = "lightgray")
+        abline(v = 0, lty = 2, lwd = 0.5, ...)
+        segments(xi[, "lwr"], yvals, xi[, "upr"], 
+            yvals, ...)
+        segments(as.vector(xi), rep.int(yvals - 0.1, 3L), as.vector(xi), 
+            rep.int(yvals + 0.1, 3L), ...)
+        title(main = paste0(format(100 * attr(x, "conf.level"), 
+            digits = 2L), "% confidence level ", main ,"\n"), 
+            xlab = paste("Differences in mean levels of", 
+                names(x)[i]))
+        box()
+        dev.flush()
+        on.exit()
+    }
 }
 ```
 
 
 Tukey Tests
-```{r}
+```{r, fig.height=10}
 regions <- c("Control", "Control High Flow", "Control Low Flow", "Non-Lasered")
 ofs <- c("CC", "ESV", "ISV", "SC", "TM", "Corneaoscleral", "Uveal")
 
@@ -179,30 +176,32 @@ for (region in regions){
   c_r <- filter(glyco_c, Region == region)
   cov_reg <- aov(qlogis(coverage_p) ~ Outflow_Location + left + monkey, data = c_r)
   r1 <- TukeyHSD(cov_reg, which = "Outflow_Location", conf.level = 0.95)
-  op=par(mar=c(4.2,14,3.8,2))
-  tuk_plot(r1, region, "Difference in Means", "Outflow Location")
+  op=par(mar=c(4.2,14,3.8,5))
+  tuk_plot(r1, paste(region, "-" ,"Coverage"), las = 1)
   par(op)
 }
-
-for (of in ofs){
-  c_o <- filter(glyco_c, Outflow_Location == of)
-  cov_reg <- aov(qlogis(coverage_p) ~ Region + left + monkey, data = c_o)
-  r3 <- TukeyHSD(cov_reg, which = "Region", conf.level = 0.95)
-  op=par(mar=c(4.2,14,3.8,2))
-  plot(r3, las = 1)
-  par(op)
-}
-
-
-
 
 
 for (region in regions){
   h_r <- filter(glyco_h, Region == region)
   h_reg <- aov(log(height) ~ Outflow_Location + left + monkey, data = h_r)
   r1 <- TukeyHSD(h_reg, which = "Outflow_Location", conf.level = 0.95)
+  op=par(mar=c(4.2,14,3.8,5))
+  tuk_plot(r1, paste(region, "-" ,"Height"), las = 1)
+  par(op)
+}
+
+
+```
+
+```{r}
+
+for (of in ofs){
+  c_o <- filter(glyco_c, Outflow_Location == of)
+  cov_reg <- aov(qlogis(coverage_p) ~ Region + left + monkey, data = c_o)
+  r3 <- TukeyHSD(cov_reg, which = "Region", conf.level = 0.95)
   op=par(mar=c(4.2,14,3.8,2))
-  plot(r1, las = 1)
+  tuk_plot(r3, paste(of, "-" ,"Coverage"), las = 1)
   par(op)
 }
 
@@ -211,7 +210,7 @@ for (of in ofs){
   h_reg <- aov(log(height) ~ Region + left + monkey, data = h_o)
   r3 <- TukeyHSD(h_reg, which = "Region", conf.level = 0.95)
   op=par(mar=c(4.2,14,3.8,2))
-  plot(r3, las = 1)
+  tuk_plot(r3, paste(of, "-" ,"Height"), las = 1)
   par(op)
 }
 
