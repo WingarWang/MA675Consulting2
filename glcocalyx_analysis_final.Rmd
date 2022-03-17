@@ -318,21 +318,40 @@ boxplot(log(height)~Region,data=glyco_h,
    xlab="location", ylab="height")
 
 ggplot(glyco_c, aes(x=Outflow_Location, y=coverage, color=Region)) +
-  geom_boxplot() 
+  geom_boxplot() +
+  ggtitle("Coverage isolating by Outflow Location")
 
 ggplot(glyco_c, aes(x=Region, y=coverage, color=Outflow_Location)) +
-  geom_boxplot() 
+  geom_boxplot() +
+  ggtitle("Coverage isolating by Region")
 
 ggplot(glyco_h, aes(x=Outflow_Location, y=height, color=Region)) +
-  geom_boxplot() 
+  geom_boxplot() +
+  ggtitle("Height isolating by Outflow Location")
 
 ggplot(glyco_h, aes(x=Region, y=height, color=Outflow_Location)) +
-  geom_boxplot() 
+  geom_boxplot() +
+  ggtitle("Height isolating by Region")
 ```
 
 
 
+```{r}
+mean(glyco_h$height)
+mean(filter(glyco_h, Region == "Control")$height)
+mean(filter(glyco_h, Region == "Control High Flow")$height)
+mean(filter(glyco_h, Region == "Control Low Flow")$height)
+mean(filter(glyco_h, Region == "Non-Lasered")$height)
+print("---")
+mean(filter(glyco_h, Outflow_Location == "CC")$height)
+mean(filter(glyco_h, Outflow_Location == "ESV")$height)
+mean(filter(glyco_h, Outflow_Location == "ISV")$height)
+mean(filter(glyco_h, Outflow_Location == "SC")$height)
+mean(filter(glyco_h, Outflow_Location == "TM")$height)
+mean(filter(glyco_h, Outflow_Location == "Corneaoscleral")$height)
+mean(filter(glyco_h, Outflow_Location == "Uveal")$height)
 
+```
 
 
 
