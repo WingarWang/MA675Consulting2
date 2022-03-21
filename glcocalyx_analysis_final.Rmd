@@ -243,6 +243,11 @@ sh <- summary(sfit_h2,
 posterior_interval(sfit_c2, prob=0.95)
 posterior_interval(sfit_h2, prob=0.95)
 ### https://stephens999.github.io/fiveMinuteStats/summarize_interpret_posterior.html
+
+yrep <- posterior_predict(sfit_h2)
+
+g <- arrange(glyco_h, Region)
+ppc_ribbon_grouped(y = log(g$height), yrep = yrep, y_draw = "points", group = g$Outflow_Location)
 ```
 
 ```{r}
