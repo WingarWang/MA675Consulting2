@@ -181,6 +181,12 @@ for (region in regions){
   par(op)
 }
 
+cov_reg <- aov(qlogis(coverage_p) ~ Outflow_Location + left + monkey, data = glyco_c)
+  r1 <- TukeyHSD(cov_reg, which = "Outflow_Location", conf.level = 0.95)
+op=par(mar=c(4.2,14,3.8,5))
+tuk_plot(r1, "Coverage - Aggregated ", las = 1)
+  par(op)
+
 
 for (region in regions){
   h_r <- filter(glyco_h, Region == region)
@@ -190,6 +196,12 @@ for (region in regions){
   tuk_plot(r1, paste(region, "-" ,"Height"), las = 1)
   par(op)
 }
+  
+h_reg <- aov(log(height) ~ Outflow_Location + left + monkey, data = glyco_h)
+  r1 <- TukeyHSD(h_reg, which = "Outflow_Location", conf.level = 0.95)
+  op=par(mar=c(4.2,14,3.8,5))
+  tuk_plot(r1, paste("Height - Aggregated"), las = 1)
+  par(op)
 
 
 ```
@@ -205,6 +217,14 @@ for (of in ofs){
   par(op)
 }
 
+
+cov_reg <- aov(qlogis(coverage_p) ~ Region + left + monkey, data = glyco_c)
+  r3 <- TukeyHSD(cov_reg, which = "Region", conf.level = 0.95)
+  op=par(mar=c(4.2,14,3.8,2))
+  tuk_plot(r3, "Coverage - Aggregated", las = 1)
+  par(op)
+
+
 for (of in ofs){
   h_o <- filter(glyco_h, Outflow_Location == of)
   h_reg <- aov(log(height) ~ Region + left + monkey, data = h_o)
@@ -215,17 +235,11 @@ for (of in ofs){
 }
 
 
-# 
-# hei_reg <- aov(log(height) ~ Region + Outflow_Location + left + monkey, data = glyco_h)
-# r2 <- TukeyHSD(hei_reg, which = c("Region", "Outflow_Location"), conf.level = 0.95)
-
-
-
-
-# op=par(mar=c(4.2,14,3.8,2))
-# plot(r2, las = 1)
-# par(op)
-
+h_reg <- aov(log(height) ~ Region + left + monkey, data = glyco_h)
+  r3 <- TukeyHSD(h_reg, which = "Region", conf.level = 0.95)
+  op=par(mar=c(4.2,14,3.8,2))
+  tuk_plot(r3, "Height - Aggregated", las = 1)
+  par(op)
 
 ```
 
