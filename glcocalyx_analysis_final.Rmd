@@ -186,7 +186,8 @@ cov_reg <- aov(qlogis(coverage_p) ~ Outflow_Location + left + monkey, data = gly
 op=par(mar=c(4.2,14,3.8,5))
 tuk_plot(r1, "Coverage - Aggregated ", las = 1)
   par(op)
-
+result_a <- summary(cov_reg)[[1]][["Pr(>F)"]][1]
+result_t <- data.frame(r1$Outflow_Location)["p.adj"]
 
 for (region in regions){
   h_r <- filter(glyco_h, Region == region)
