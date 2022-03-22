@@ -203,12 +203,43 @@ h_reg <- aov(log(height) ~ Outflow_Location + left + monkey, data = glyco_h)
   op=par(mar=c(4.2,14,3.8,5))
   tuk_plot(r1, paste("Height - Aggregated"), las = 1)
   par(op)
-
-
 ```
 
+Tukey Test: p values
 ```{r}
+regions <- c("Control", "Control High Flow", "Control Low Flow", "Non-Lasered")
+ofs <- c("CC", "ESV", "ISV", "SC", "TM", "Corneaoscleral", "Uveal")
 
+for (region in regions){
+  c_r <- filter(glyco_c, Region == region)
+  cov_reg <- aov(qlogis(coverage_p) ~ Outflow_Location + left + monkey, data = c_r)
+  r1 <- TukeyHSD(cov_reg, which = "Outflow_Location")
+  print(paste("========== p-values for Outflow_Location: ",region, "(Coverage) ========"))
+  print(r1)
+}
+
+cov_reg <- aov(qlogis(coverage_p) ~ Outflow_Location + left + monkey, data = glyco_c)
+r1 <- TukeyHSD(cov_reg, which = "Outflow_Location")
+print(paste("========== p-values for Outflow_Location: Aggregated ", "(Coverage) ========"))
+print(r1)
+
+for (region in regions){
+  h_r <- filter(glyco_h, Region == region)
+  h_reg <- aov(log(height) ~ Outflow_Location + left + monkey, data = h_r)
+  r1 <- TukeyHSD(h_reg, which = "Outflow_Location")
+  print(paste("========== p-values for Outflow_Location: ",region, "(Height) ========"))
+  print(r1)
+}
+  
+h_reg <- aov(log(height) ~ Outflow_Location + left + monkey, data = glyco_h)
+r1 <- TukeyHSD(h_reg, which = "Outflow_Location")
+print(paste("========== p-values for Outflow_Location: Aggregated", "(Height) ========"))
+print(r1)
+```
+
+
+
+```{r}
 for (of in ofs){
   c_o <- filter(glyco_c, Outflow_Location == of)
   cov_reg <- aov(qlogis(coverage_p) ~ Region + left + monkey, data = c_o)
@@ -243,6 +274,37 @@ h_reg <- aov(log(height) ~ Region + left + monkey, data = glyco_h)
   par(op)
 
 ```
+
+Tukey Test: p-values:
+```{r}
+for (of in ofs){
+  c_o <- filter(glyco_c, Outflow_Location == of)
+  cov_reg <- aov(qlogis(coverage_p) ~ Region + left + monkey, data = c_o)
+  r3 <- TukeyHSD(cov_reg, which = "Region")
+  print(paste("========== p-values for Region: ",of, "(Coverage) ========"))
+  print(r3)
+}
+
+cov_reg <- aov(qlogis(coverage_p) ~ Region + left + monkey, data = glyco_c)
+r3 <- TukeyHSD(cov_reg, which = "Region")
+print(paste("========== p-values for Region: Aggregated", "(Coverage) ========"))
+print(r3)
+
+for (of in ofs){
+  h_o <- filter(glyco_h, Outflow_Location == of)
+  h_reg <- aov(log(height) ~ Region + left + monkey, data = h_o)
+  r3 <- TukeyHSD(h_reg, which = "Region")
+  print(paste("========== p-values for Region: ",of, "(Height) ========"))
+  print(r3)
+}
+
+h_reg <- aov(log(height) ~ Region + left + monkey, data = glyco_h)
+r3 <- TukeyHSD(h_reg, which = "Region")
+print(paste("========== p-values for Region: Aggregated", "(Height) ========"))
+print(r3)
+```
+
+
 
 ```{r}
 sc <- summary(sfit_c2, 
