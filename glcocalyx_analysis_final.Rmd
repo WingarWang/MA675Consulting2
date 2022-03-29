@@ -317,14 +317,28 @@ sh <- summary(sfit_h2,
 
 
 ```{r}
-posterior_interval(sfit_c2, prob=0.95)
-posterior_interval(sfit_h2, prob=0.95)
+# posterior_interval(sfit_c2, prob=0.95)
+# posterior_interval(sfit_h2, prob=0.95)
 ### https://stephens999.github.io/fiveMinuteStats/summarize_interpret_posterior.html
 
-yrep <- posterior_predict(sfit_h2)
+g <- filter(glyco_h, Outflow_Location %in% c("TM", "Uveal", "Corneaoscleral"))
+g <- arrange(g, height)
+g <- arrange(g, Outflow_Location)
+plot(g$height)
+hist(log(g$height))
 
-g <- arrange(glyco_h, Region)
-ppc_ribbon_grouped(y = log(g$height), yrep = yrep, y_draw = "points", group = g$Outflow_Location)
+g2 <- filter(glyco_h, Outflow_Location %in% c("CC", "ESV", "ISV", "SC"))
+g2 <- arrange(g2, height)
+g2 <- arrange(g2, Outflow_Location)
+plot(g2$height)
+hist(log(g2$height))
+
+g3 <- arrange(glyco_h, height)
+g3 <- arrange(g3, Outflow_Location)
+plot(g3$height)
+hist(log(g3$height))
+
+#ppc_ribbon(y = log(g$height), yrep = yrep, y_draw = "points")
 ```
 
 ```{r}
