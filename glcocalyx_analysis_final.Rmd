@@ -392,9 +392,8 @@ hist(log(g3$height))
 
 ```{r}
 pp_check(sfit_c2)
-plot.new
 pp_check(sfit_h2)
-abline(v=4)
+
 ```
 
 ```{r}
