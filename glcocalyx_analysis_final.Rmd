@@ -301,6 +301,59 @@ print(r3)
 ```
 
 
+Tukey Test Redoes: Remove non-equal variance groups
+
+```{r, fig.height=10}
+regions <- c("Control", "Control High Flow", "Control Low Flow", "Non-Lasered")
+
+
+for (region in regions){
+  c_r <- filter(glyco_c, Region == region, Outflow_Location %in% c("CC", "SC", "ESV", "ISV", "Uveal"))
+  cov_reg <- aov(qlogis(coverage_p) ~ Outflow_Location + left + monkey, data = c_r)
+  r1 <- TukeyHSD(cov_reg, which = "Outflow_Location", conf.level = 0.95)
+  op=par(mar=c(4.2,14,3.8,5))
+  tuk_plot(r1, paste(region, "-" ,"Coverage"), las = 1)
+  par(op)
+}
+
+
+for (region in regions){
+  h_r <- filter(glyco_h, Region == region, Outflow_Location %in% c("CC", "SC", "TM", "Corneaoscleral", "Uveal"))
+  h_reg <- aov(log(height) ~ Outflow_Location + left + monkey, data = h_r)
+  r1 <- TukeyHSD(h_reg, which = "Outflow_Location", conf.level = 0.95)
+  op=par(mar=c(4.2,14,3.8,5))
+  tuk_plot(r1, paste(region, "-" ,"Height"), las = 1)
+  par(op)
+}
+  
+```
+
+```{r}
+ofs <- c("CC", "ESV", "ISV", "SC", "TM", "Corneaoscleral", "Uveal")
+
+for (of in ofs){
+  c_o <- filter(glyco_c, Outflow_Location == of)
+  cov_reg <- aov(qlogis(coverage_p) ~ Region + left + monkey, data = c_o)
+  r3 <- TukeyHSD(cov_reg, which = "Region", conf.level = 0.95)
+  op=par(mar=c(4.2,14,3.8,2))
+  tuk_plot(r3, paste(of, "-" ,"Coverage"), las = 1)
+  par(op)
+}
+
+
+
+for (of in ofs){
+  h_o <- filter(glyco_h, Outflow_Location == of, Region %in% c("Control High Flow", "Control Low Flow", "Non-Lasered"))
+  h_reg <- aov(log(height) ~ Region + left + monkey, data = h_o)
+  r3 <- TukeyHSD(h_reg, which = "Region", conf.level = 0.95)
+  op=par(mar=c(4.2,14,3.8,2))
+  tuk_plot(r3, paste(of, "-" ,"Height"), las = 1)
+  par(op)
+}
+
+```
+
+
 
 ```{r}
 sc <- summary(sfit_c2, 
@@ -339,7 +392,9 @@ hist(log(g3$height))
 
 ```{r}
 pp_check(sfit_c2)
+plot.new
 pp_check(sfit_h2)
+abline(v=4)
 ```
 
 ```{r}
