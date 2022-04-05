@@ -87,34 +87,51 @@ hist(log(filter(glyco_h, Outflow_Location == "Corneaoscleral")$height)) #0.09
 
 #Variance group checks
 #Coverage Regions
-var(filter(glyco_c, Region == "Control")$coverage_p) 
-var(filter(glyco_c, Region == "Control High Flow")$coverage_p) 
-var(filter(glyco_c, Region == "Control Low Flow")$coverage_p)
+cov_reg_var <- c(
+var(filter(glyco_c, Region == "Control")$coverage_p), 
+var(filter(glyco_c, Region == "Control High Flow")$coverage_p), 
+var(filter(glyco_c, Region == "Control Low Flow")$coverage_p),
 var(filter(glyco_c, Region == "Non-Lasered")$coverage_p)
+)
 #Heights Regions
-var(log(filter(glyco_h, Region == "Control")$height)) #HIGH
-var(log(filter(glyco_h, Region == "Control High Flow")$height))  
-var(log(filter(glyco_h, Region == "Control Low Flow")$height))
+hei_reg_var <- c(
+var(log(filter(glyco_h, Region == "Control")$height)), #HIGH
+var(log(filter(glyco_h, Region == "Control High Flow")$height)), 
+var(log(filter(glyco_h, Region == "Control Low Flow")$height)),
 var(log(filter(glyco_h, Region == "Non-Lasered")$height))
-
+)
 
 #Coverages Outflow Locations
-var(filter(glyco_c, Outflow_Location == "SC")$coverage_p)
-var(filter(glyco_c, Outflow_Location == "CC")$coverage_p)
-var(filter(glyco_c, Outflow_Location == "ISV")$coverage_p)
-var(filter(glyco_c, Outflow_Location == "ESV")$coverage_p)
-var(filter(glyco_c, Outflow_Location == "TM")$coverage_p) #LOW
-var(filter(glyco_c, Outflow_Location == "Uveal")$coverage_p)
+cov_of_var <- c(
+var(filter(glyco_c, Outflow_Location == "SC")$coverage_p),
+var(filter(glyco_c, Outflow_Location == "CC")$coverage_p),
+var(filter(glyco_c, Outflow_Location == "ISV")$coverage_p),
+var(filter(glyco_c, Outflow_Location == "ESV")$coverage_p),
+var(filter(glyco_c, Outflow_Location == "TM")$coverage_p), #LOW
+var(filter(glyco_c, Outflow_Location == "Uveal")$coverage_p),
 var(filter(glyco_c, Outflow_Location == "Corneaoscleral")$coverage_p) #HIGH
+)
 
 #Heights Outflow Location
-var(log(filter(glyco_h, Outflow_Location == "SC")$height))
-var(log(filter(glyco_h, Outflow_Location == "CC")$height))
-var(log(filter(glyco_h, Outflow_Location == "ISV")$height)) #HIGH
-var(log(filter(glyco_h, Outflow_Location == "ESV")$height)) #HIGH
-var(log(filter(glyco_h, Outflow_Location == "TM")$height))
-var(log(filter(glyco_h, Outflow_Location == "Uveal")$height))
+hei_of_var <- c(
+var(log(filter(glyco_h, Outflow_Location == "SC")$height)),
+var(log(filter(glyco_h, Outflow_Location == "CC")$height)),
+var(log(filter(glyco_h, Outflow_Location == "ISV")$height)), #HIGH
+var(log(filter(glyco_h, Outflow_Location == "ESV")$height)) ,#HIGH
+var(log(filter(glyco_h, Outflow_Location == "TM")$height)),
+var(log(filter(glyco_h, Outflow_Location == "Uveal")$height)),
 var(log(filter(glyco_h, Outflow_Location == "Corneaoscleral")$height))
+)
+
+barplot(height = cov_reg_var,names.arg = c("Control", "CHF", "CLF", "Non-Lasered"),xlab = "Region",ylab = "Variance",main = "Equal Variance Check: Coverage Regions")
+
+barplot(height = hei_reg_var,names.arg = c("Control", "CHF", "CLF", "Non-Lasered"),xlab = "Region",ylab = "Variance",main = "Equal Variance Check: Height Regions")
+
+barplot(height = cov_of_var,names.arg = c("SC", "CC", "ISV","ESV", "TM","Uveal", "Corn."),xlab = "Outflow Location",ylab = "Variance",main = "Equal Variance Check: Coverage Ouflow Locations")
+
+barplot(height = hei_of_var,names.arg = c("SC", "CC", "ISV","ESV", "TM","Uveal", "Corn."),xlab = "Outflow Location",ylab = "Variance",main = "Equal Variance Check: Height Ouflow Locations")
+
+
 ```
 
 
